@@ -1,0 +1,53 @@
+ב"ה
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE Users (
+    Id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    First_name VARCHAR(50),
+    Last_name VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    Password VARCHAR(255),
+    Phone_number VARCHAR(20),
+    Roles VARCHAR(50),
+    Created_at TIMESTAMP DEFAULT current_timestamp,
+    Updated_at TIMESTAMP DEFAULT current_timestamp
+);
+
+CREATE TABLE Orders (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    User_id UUID REFERENCES Users(Id),
+    Start_date TIMESTAMP,
+    End_date TIMESTAMP,
+    Status VARCHAR(50),
+    Finish_address VARCHAR(100),
+    Price_per_hour DECIMAL(10, 2),
+    Allowed_kilometers INT,
+    Additional_notes TEXT,
+    Created_at TIMESTAMP DEFAULT current_timestamp,
+    Updated_at TIMESTAMP DEFAULT current_timestamp
+);
+
+CREATE TABLE Cars (
+    Id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    License_plate VARCHAR(20),
+    Seats_number INT,
+    Description TEXT,
+    Manufacturer_model VARCHAR(100),
+    Color VARCHAR(50),
+    Year INT,
+    Location VARCHAR(100),
+    Image VARCHAR(255),
+Image_alt VARCHAR(255),
+    Availability BOOLEAN,   
+    Created_at TIMESTAMP DEFAULT current_timestamp,
+    Updated_at TIMESTAMP DEFAULT current_timestamp
+);
+
+
+
+get all tabels name 
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public';

@@ -1,0 +1,84 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: server-demo
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - action: rebuild
+          path: ./server/app/package.json
+    ports:
+      - "4003:4003"
+    networks:
+      - app-network
+    environment:
+      CONNECTION_STRING: postgres://moishy:12345#Db@postgres:5432/carsRent
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - ./server/app/dist:/server/dist
+    depends_on:
+      - redis
+      - postgres
+
+  client:
+    container_name: client-demo
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - action: rebuild
+          path: ./client/app/package.json
+    ports:
+      - "8002:8002"
+    tty: true
+    networks:
+      - app-network
+    volumes:
+      - type: bind
+        source: ./client/app/src
+        target: /client/src
+    depends_on:
+      - redis
+      - postgres
+      - server
+
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    environment:
+      POSTGRES_DB: carsRent
+      POSTGRES_USER: moishy
+      POSTGRES_PASSWORD: 12345#Db
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    restart: always
+    networks:
+      - app-network
+    ports:
+      - "6379:6379"
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - cache:/data
+      - ./redis.conf:/mnt/c/Users/DL/Docoments/moishy
+
+networks:
+  app-network:
+
+volumes:
+  cache:
+    driver: local
+  postgresdata:
