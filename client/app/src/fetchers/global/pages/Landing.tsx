@@ -2,7 +2,7 @@ import { Box, IconButton, Typography } from "@mui/material";
 import CarRentalIcon from "@mui/icons-material/CarRental";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import MapIcon from "@mui/icons-material/Map";
-import car from "../../../../images/car.png";
+import car from "../../../assets/images/car.png";
 import "./landing.css";
 import { useNavigate } from "react-router";
 
