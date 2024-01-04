@@ -9,7 +9,9 @@ interface DivBoxType {
   wrap?: string;
   gap?: string;
   margin?: string;
+  display?: string;
   min_height?: string;
+  visibility?: string;
 }
 
 interface TextType {
@@ -25,12 +27,14 @@ interface ButtonType {
   radius?: string;
   font?: string;
   size?: string;
+  padding?: string;
+  margin?: string;
 }
 
 export const DivBox = styled.div<DivBoxType>`
-  display: flex;
-  width: ${({ width }) => width || "0"};
-  height: ${({ height }) => height || "0"};
+  display: ${({ display }) => display || "flex"};
+  width: ${({ width }) => width || "auto"};
+  height: ${({ height }) => height || "auto"};
   text-align: center;
   align-items: ${({ align }) => align || "unset"};
   flex-direction: ${({ way }) => way || "row"};
@@ -40,6 +44,7 @@ export const DivBox = styled.div<DivBoxType>`
   margin: ${({ margin }) => margin || "0"};
   justify-content: ${({ space }) => space || "unset"};
   min-height: ${({ min_height }) => min_height || "auto"};
+  visibility: ${({ visibility }) => visibility};
 `;
 
 export const Text = styled.p<TextType>`
@@ -53,10 +58,13 @@ export const ButtonStyle = styled.button<ButtonType>`
   background-color: ${({ background }) => background || "white"};
   color: ${({ color }) => color || "black"};
   border: ${({ border }) => border || "black"};
-  border-radius: ${({ radius }) => radius || "0"};
+  border-radius: ${({ radius }) => radius || "10px"};
   font-family: ${({ font }) => font};
   font-size: ${({ size }) => size};
+  padding: ${({ padding }) => padding || "6px"};
+  margin: ${({ margin }) => margin || "1vh"};
   &:hover {
-    background-color: ${({ backgroundHover }) => backgroundHover || "white"};
+    background-color: ${({ backgroundHover }) => backgroundHover || "#d7d3d3b8"};
+    cursor: pointer;
   }
 `;

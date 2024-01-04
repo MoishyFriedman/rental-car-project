@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router";
-import { ButtonStyle, DivBox } from "../../components/styled/styled";
+import { ButtonStyle, DivBox } from "../../styled/styled";
 
-export default function Menu() {
+export default function Menu(prop: { menu: string[] }) {
   const navigate = useNavigate();
 
   return (
     <>
-      <DivBox width="100%" height="10vh">
-        <DivBox way="column">
-          <ButtonStyle>איתור רכב</ButtonStyle>
-          <ButtonStyle>פרטי הרכבים</ButtonStyle>
-          <ButtonStyle>ללללללל</ButtonStyle>
-        </DivBox>
+      <DivBox way="column" height="10vh">
+        {prop.menu.map((menuItem) => (
+          <ButtonStyle font="Times New Roman" border="white" size="medium" background="#ffffff00">
+            {menuItem}
+          </ButtonStyle>
+        ))}
       </DivBox>
     </>
   );

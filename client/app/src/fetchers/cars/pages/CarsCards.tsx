@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import CarCard from "../components/card/Card";
-import { DivBox } from "../../global/components/styled/styled";
+import { DivBox } from "../../global/styled/styled";
 
 export const data = [
   {

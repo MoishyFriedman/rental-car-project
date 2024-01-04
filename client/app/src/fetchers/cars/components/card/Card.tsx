@@ -2,7 +2,7 @@ import AirlineSeatReclineNormalIcon from "@mui/icons-material/AirlineSeatRecline
 import ModeOfTravelIcon from "@mui/icons-material/ModeOfTravel";
 import { Car } from "../../interfaces/interfaces";
 import { CarImg, Card } from "./card.styled";
-import { DivBox, Text } from "../../../global/components/styled/styled";
+import { DivBox, Text } from "../../../global/styled/styled";
 import ShekelIcon from "../../../../assets/israeli-shekel-icon";
 
 export default function CarCard(prop: { car: Car }) {
