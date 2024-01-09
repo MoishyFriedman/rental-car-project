@@ -39,6 +39,7 @@ CREATE TABLE Cars (
     Location VARCHAR(100),
     Image VARCHAR(255),
 Image_alt VARCHAR(255),
+hour_price INT,
     Availability BOOLEAN,   
     Created_at TIMESTAMP DEFAULT current_timestamp,
     Updated_at TIMESTAMP DEFAULT current_timestamp

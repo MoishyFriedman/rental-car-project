@@ -1,9 +1,8 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
-import { data } from "./CarsCards";
 
 export default function Table() {
-  const cars = data;
+  // const cars = [{""}];
   const columns = [
     {
       field: "id",
@@ -68,7 +67,7 @@ export default function Table() {
           },
         }}
       >
-        <DataGrid getRowId={(row: { id: string }) => row.id} rows={cars || []} columns={columns} />
+        <DataGrid getRowId={(row: { id: string }) => row.id} rows={[]} columns={columns} />
       </Box>
     </Box>
   );
