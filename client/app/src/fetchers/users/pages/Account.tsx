@@ -12,6 +12,7 @@ export default function LabTabs() {
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
+    event;
   };
 
   return (

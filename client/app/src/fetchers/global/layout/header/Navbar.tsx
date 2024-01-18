@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import { MenuDiv, Navbar } from "./header.styled";
 import { ButtonStyle } from "../../styled/styled";
 import { useState } from "react";
@@ -6,7 +5,6 @@ import Menu from "./Menu";
 
 export default function NavbarMenu() {
   const [menu, setMenu] = useState<string[]>([]);
-  const navigate = useNavigate();
 
   return (
     <Navbar id="navbar">

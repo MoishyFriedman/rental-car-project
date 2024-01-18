@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router";
 import { ButtonStyle, DivBox } from "../../styled/styled";
 
 export default function Menu(prop: { menu: string[] }) {
-  const navigate = useNavigate();
-
   return (
     <>
       <DivBox way="column" height="10vh">

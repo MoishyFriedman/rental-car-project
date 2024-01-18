@@ -1,0 +1,94 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Car {
+  seats_number: Int!
+  license_plate: String!
+  description: String!
+  manufacturer_model: String!
+  color: String!
+  year: Int!
+  location: String!
+  image: String!
+  image_alt: String!
+  hour_price: Int!
+  availability: Boolean!
+}
+
+type User {
+  first_name: String!
+  last_name: String!
+  email: String!
+  password: String!
+  phone_number: String!
+  roles: String!
+}
+
+type Query {
+  users: [User!]!
+  userById(id: String!): User!
+  userByEmail(email: String!): User!
+  cars: [Car!]!
+  car(id: String!): Car!
+}
+
+type Mutation {
+  signIn(email: String!, password: String!): String!
+  signUp(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: String!): User!
+  createCar(createCarInput: CreateCarInput!): Car!
+  updateCar(updateCarInput: UpdateCarInput!): Car!
+  removeCar(id: String!): Car!
+}
+
+input CreateUserInput {
+  first_name: String!
+  last_name: String!
+  email: String!
+  password: String!
+  phone_number: String!
+}
+
+input UpdateUserInput {
+  first_name: String
+  last_name: String
+  email: String
+  password: String
+  phone_number: String
+  id: String!
+}
+
+input CreateCarInput {
+  seats_number: Int!
+  license_plate: String!
+  description: String!
+  manufacturer_model: String!
+  color: String!
+  year: Int!
+  location: String!
+  image: String!
+  image_alt: String!
+  hour_price: Int!
+  availability: Boolean!
+}
+
+input UpdateCarInput {
+  seats_number: Int
+  license_plate: String
+  description: String
+  manufacturer_model: String
+  color: String
+  year: Int
+  location: String
+  image: String
+  image_alt: String
+  hour_price: Int
+  availability: Boolean
+  id: String!
+}
+
+type Subscription {
+  newUser: String!
+}
