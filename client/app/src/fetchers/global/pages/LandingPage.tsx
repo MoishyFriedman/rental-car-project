@@ -6,8 +6,8 @@ import car from "../../../assets/images/car.png";
 import "./landing.css";
 import { useNavigate } from "react-router";
 
-export default function Landing() {
-  const navigate = useNavigate();
+export default function LandingPage() {
+  // const navigate = useNavigate();
   return (
     <Box sx={{ minHeight: "100vh", minWidth: "100vw", position: "relative", display: "flex", flexDirection: "column" }}>
       <Box
@@ -44,7 +44,7 @@ export default function Landing() {
           </IconButton>
           <IconButton
             onClick={() => {
-              navigate("/cards");
+              // navigate("/cards");
             }}
             sx={{ display: "flex", flexDirection: "column", color: "#5f526c" }}
           >

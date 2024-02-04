@@ -15,10 +15,15 @@ services:
     networks:
       - app-network
     environment:
-      CONNECTION_STRING: postgres://postgres:moishy@postgres:5432/carsRent
+      SERVER_PORT: 3000
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: carsRent
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: moshe
+      # CONNECTION_STRING: postgres://postgres:moshe@postgres:5432/carsRent
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      REDIS_PASSWORD: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
     volumes:
       - ./server/app/dist:/server/dist
     depends_on:
@@ -58,8 +63,8 @@ services:
       - app-network
     environment:
       POSTGRES_DB: carsRent
-      POSTGRES_USER: postgres 
-      POSTGRES_PASSWORD: moishy
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: moshe
     volumes:
       - postgresdata:/var/lib/postgresql/data
 
@@ -70,10 +75,10 @@ services:
       - app-network
     ports:
       - "6379:6379"
-    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    command: redis-server  --protected-mode no --save 20 1 --loglevel warning
     volumes:
       - cache:/data
-      - ./redis.conf:/mnt/c/Users/DL/Docoments/moishy
+      - ./server/redis.conf:/usr/local/etc/redis
 
 networks:
   app-network:

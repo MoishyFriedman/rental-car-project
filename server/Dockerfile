@@ -10,4 +10,4 @@ RUN npm install
 
 EXPOSE 4003
 
-CMD ["npm", "run", "start:dev"]
+CMD ["npm", "run", "start:prod"]

@@ -18,7 +18,6 @@ car.seats_number = 5;
 car.year = 2021;
 
 export const carInput: CreateCarInput = {
-  availability: true,
   color: 'red',
   hour_price: 30,
   description: 'big car',

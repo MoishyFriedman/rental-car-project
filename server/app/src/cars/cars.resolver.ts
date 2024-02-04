@@ -4,7 +4,7 @@ import { CreateCarInput } from './dto/create-car.input';
 import { UpdateCarInput } from './dto/update-car.input';
 import { Car } from './models/car.model';
 import { UseInterceptors } from '@nestjs/common';
-import { CacheInterceptor, CacheKey, CacheTTL } from '@nestjs/cache-manager';
+import { CacheInterceptor, CacheKey } from '@nestjs/cache-manager';
 import { GraphqlCacheInterceptor } from 'src/helpres/interceptors/graphqlCache.interceptor';
 import { GraphqlCacheKey } from 'src/helpres/decorator/graphqlCacheKey';
 

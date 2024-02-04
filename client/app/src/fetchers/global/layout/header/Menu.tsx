@@ -5,7 +5,7 @@ export default function Menu(prop: { menu: string[] }) {
     <>
       <DivBox way="column" height="10vh">
         {prop.menu.map((menuItem) => (
-          <ButtonStyle font="Times New Roman" border="white" size="medium" background="#ffffff00">
+          <ButtonStyle key={menuItem} font="Times New Roman" border="white" size="medium" background="#ffffff00">
             {menuItem}
           </ButtonStyle>
         ))}

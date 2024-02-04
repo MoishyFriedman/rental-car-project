@@ -31,7 +31,4 @@ export class CreateCarInput {
 
   @Field((type) => Int)
   hour_price: number;
-
-  @Field()
-  availability: boolean;
 }

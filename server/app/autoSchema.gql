@@ -71,7 +71,6 @@ input CreateCarInput {
   image: String!
   image_alt: String!
   hour_price: Int!
-  availability: Boolean!
 }
 
 input UpdateCarInput {
@@ -85,8 +84,8 @@ input UpdateCarInput {
   image: String
   image_alt: String
   hour_price: Int
-  availability: Boolean
   id: String!
+  availability: Boolean
 }
 
 type Subscription {

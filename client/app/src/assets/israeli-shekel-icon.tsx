@@ -1,7 +1,7 @@
 export default function ShekelIcon() {
   return (
     <>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg data-testid="shekelIcon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="15" height="15" fill="#F5F5F5" />
         <g clipPath="url(#clip0_0_1)">
           <path

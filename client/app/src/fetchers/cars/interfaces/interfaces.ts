@@ -11,8 +11,6 @@ interface Car {
   image_alt: string;
   availability: boolean;
   hour_price: number;
-  created_at: string;
-  updated_at: string;
 }
 
 export type { Car };

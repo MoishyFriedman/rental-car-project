@@ -8,6 +8,6 @@ RUN npm install --frozen-package-lock.json
 
 COPY ./app .
 
-EXPOSE 8000
+EXPOSE 8002
 
 CMD npm run dev
